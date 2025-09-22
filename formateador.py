@@ -4,7 +4,7 @@ def formateador_aritmético(problemas, respuesta=False):
     if len(problemas) > 5:
         return "Error: Demasiados elementos."
     
-    # Identificacion de los elementos de la operación
+    # Identificamos los elementos de la operación
     OperandoLista1 = []
     OperadorLista = []
     OperandoLista2 = []
@@ -27,7 +27,7 @@ def formateador_aritmético(problemas, respuesta=False):
         if len(Operando1) > 4 or len(Operando2) > 4:
             return "Error: La longitud del numero no debe superara de 4 digitos"
         
-        # Calculate result if needed
+        # Calculamos los resultados
         if respuesta:
             if Operador == '+':
                 Valor = str(int(Operando1) + int(Operando2))
@@ -36,46 +36,45 @@ def formateador_aritmético(problemas, respuesta=False):
         else:
             Valor = None
         
-        # Store components
+        # Guardamos en una lista los componentes
         OperandoLista1.append(Operando1)
         OperadorLista.append(Operador)
         OperandoLista2.append(Operando2)
         ResultadoLista.append(Valor)
     
-    # Prepare lines for output
+    # Preparamos la salida
     Linea1 = []
     Linea2 = []
     TrazoLinea = []
     LineaResultado = []
     
-    # Format each problem
+    # Formateamos
     for i in range(len(problemas)):
-        # Determine the maximum width needed
+        # Calculamos el ancho
         max_width = max(len(OperandoLista1[i]), len(OperandoLista2[i])) + 2
         
-        # Format first operand line (right-aligned)
+        # Primer Operando
         Linea1.append(OperandoLista1[i].rjust(max_width))
         
-        # Format second operand line (operator + space + right-aligned operand)
+        # Operador  y Segundo Operanando
         Linea2.append(OperadorLista[i] + " " + OperandoLista2[i].rjust(max_width - 2))
         
-        # Format dash line
+        # Trazado de la Linea
         TrazoLinea.append('-' * max_width)
         
-        # Format result line if needed
+        #  El Resultado
         if respuesta and ResultadoLista[i] is not None:
             LineaResultado.append(ResultadoLista[i].rjust(max_width))
     
-    # Join all lines with 4 spaces between problems
-    arranged_problems = "    ".join(Linea1) + "\n"
-    arranged_problems += "    ".join(Linea2) + "\n"
-    arranged_problems += "    ".join(TrazoLinea)
+    problema_formateado = "    ".join(Linea1) + "\n"
+    problema_formateado += "    ".join(Linea2) + "\n"
+    problema_formateado += "    ".join(TrazoLinea)
     
-    # Add results if needed
+    # Agregamos el resultado si es solicitado
     if respuesta:
-        arranged_problems += "\n" + "    ".join(LineaResultado)
+        problema_formateado += "\n" + "    ".join(LineaResultado)
     
-    return arranged_problems
+    return problema_formateado
 
 
 if __name__ == "__main__":
