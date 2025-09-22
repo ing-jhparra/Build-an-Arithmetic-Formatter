@@ -1,7 +1,7 @@
-def formateador_aritmético(problemas, respuesta=False):
+def formateador_aritmético(problemas_aritmeticos, respuesta=False):
 
     # Contamos el numero de elementos en la lista
-    if len(problemas) > 5:
+    if len(problemas_aritmeticos) > 5:
         return "Error: Demasiados elementos."
     
     # Identificamos los elementos de la operación
@@ -10,7 +10,7 @@ def formateador_aritmético(problemas, respuesta=False):
     OperandoLista2 = []
     ResultadoLista = []
     
-    for problema in problemas:
+    for problema in problemas_aritmeticos:
         componentes = problema.split()
         
         if len(componentes) != 3:
@@ -49,7 +49,7 @@ def formateador_aritmético(problemas, respuesta=False):
     LineaResultado = []
     
     # Formateamos
-    for i in range(len(problemas)):
+    for i in range(len(problemas_aritmeticos)):
         # Calculamos el ancho
         max_width = max(len(OperandoLista1[i]), len(OperandoLista2[i])) + 2
         
