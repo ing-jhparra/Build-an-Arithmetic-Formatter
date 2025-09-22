@@ -93,7 +93,6 @@ if __name__ == "__main__":
     print(formateador_aritmético(problema2, True))
     print("\n" + "="*50 + "\n")
     
-    # Error test cases
     print("Test 3 - Error: Mas de 5 elementos:")
     print(formateador_aritmético(Problema3))
     print("\n" + "="*50 + "\n")
