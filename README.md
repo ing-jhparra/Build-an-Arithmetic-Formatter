@@ -46,10 +46,10 @@ The function will return the correct conversion if the supplied problems are pro
 
     ```python:
 
-    def formateador_aritmético(problemas, respuesta=False):
+    def formateador_aritmético(problemas_aritmeticos, respuesta=False):
 
     # Contamos el numero de elementos en la lista
-    if len(problemas) > 5:
+    if len(problemas_aritmeticos) > 5:
         return "Error: Demasiados elementos."
     
     # Identificamos los elementos de la operación
@@ -58,7 +58,7 @@ The function will return the correct conversion if the supplied problems are pro
     OperandoLista2 = []
     ResultadoLista = []
     
-    for problema in problemas:
+    for problema in problemas_aritmeticos:
         componentes = problema.split()
         
         if len(componentes) != 3:
@@ -97,7 +97,7 @@ The function will return the correct conversion if the supplied problems are pro
     LineaResultado = []
     
     # Formateamos
-    for i in range(len(problemas)):
+    for i in range(len(problemas_aritmeticos)):
         # Calculamos el ancho
         max_width = max(len(OperandoLista1[i]), len(OperandoLista2[i])) + 2
         
@@ -123,6 +123,34 @@ The function will return the correct conversion if the supplied problems are pro
         problema_formateado += "\n" + "    ".join(LineaResultado)
     
     return problema_formateado
+
+
+if __name__ == "__main__":
+
+    problema1 = ["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]
+    problema2 = ["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"]
+    Problema3 = ["1 + 2", "3 + 4", "5 + 6", "7 + 8", "9 + 10", "11 + 12"]
+    Problema4 = ["1 * 2", "3 + 4"]
+    Problema5 = ["1a + 2", "3 + 4"]
+    
+    print("Test 1 - Sin Calculo:")
+    print(formateador_aritmético(problema1))
+    print("\n" + "="*50 + "\n")
+    
+    print("Test 2 - Con Calculo:")
+    print(formateador_aritmético(problema2, True))
+    print("\n" + "="*50 + "\n")
+    
+    print("Test 3 - Error: Mas de 5 elementos:")
+    print(formateador_aritmético(Problema3))
+    print("\n" + "="*50 + "\n")
+    
+    print("Test 4 - Error: Operador Invalido:")
+    print(formateador_aritmético(Problema4))
+    print("\n" + "="*50 + "\n")
+    
+    print("Test 5 - Error: Caracter no numerico:")
+    print(formateador_aritmético(Problema5))
     
     ```
 
