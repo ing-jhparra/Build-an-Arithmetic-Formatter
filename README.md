@@ -2,14 +2,14 @@ Proyecto del curso [Scientific Computing with Python](https://www.freecodecamp.o
 
 <div align="center">
   <h3>Formateador Aritmético</h3>
-  <img src="Formateador.png" alt="Formateador Aritmético" width="300">
+  <img src="img/Formateador.png" alt="Formateador Aritmético" width="300">
 </div>
 
 # Build an Arithmetic Formatter
 
 Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
 
-![Problema aritmético](Formato1.png)
+![Problema aritmético](img/Formato1.png)
 
 
 Finish the arithmetic_arranger function that receives a list of strings which are arithmetic problems, and returns the problems arranged vertically and side-by-side. The function should optionally take a second argument. When the second argument is set to True, the answers should be displayed.
@@ -19,13 +19,13 @@ Example
 
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
 
-![Problema aritmético](Formato2.png)
+![Problema aritmético](img/Formato2.png)
 
 ## Function Call:
 
 arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
 
-![Problema aritmético](Formato3.png)
+![Problema aritmético](img/Formato3.png)
 
 ## Rules
 
