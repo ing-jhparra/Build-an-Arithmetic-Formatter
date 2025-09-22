@@ -44,7 +44,8 @@ The function will return the correct conversion if the supplied problems are pro
 
 ## La función Python
 
-    ```python
+    ```python:
+
     def formateador_aritmético(problemas, respuesta=False):
 
     # Contamos el numero de elementos en la lista
@@ -122,6 +123,7 @@ The function will return the correct conversion if the supplied problems are pro
         problema_formateado += "\n" + "    ".join(LineaResultado)
     
     return problema_formateado
+    
     ```
 
 
